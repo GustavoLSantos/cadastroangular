@@ -1,0 +1,23 @@
+<h2>
+  <div class="div-titulo">
+    <label value="Título">Cadastro de Usuário</label>
+  </div>
+</h2>
+<div>
+  <mat-card>
+    <mat-card-content>
+      <mat-input-container>
+        <input matInput [(ngModel)]="usuario.nome" name="nome" autocomplete="off" placeholder="Nome do Usuário"/>
+      </mat-input-container>
+    </mat-card-content>
+  </mat-card>
+
+</div>
+
+<div>
+
+  <button mat-raised-button color="primary" (click)="cadastrarUsuario()">
+    Salvar
+  </button>
+
+</div>

@@ -17,7 +17,7 @@ export class CadastroUsuarioComponent implements OnInit {
   ngOnInit() {
   }
 
-  cadastrarUsuario() {
+  cadastrarUsuario(){
     this.usuarioService.cadastrarUsuario(this.usuario);
     this.usuario = new Usuario()
   }

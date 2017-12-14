@@ -1,21 +1,19 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {UsuarioService} from '../shared/service/usuario.service';
+import {CadastroUsuarioComponent} from './usuario-cadastro/cadastro-usuario.component';
 import {AppSocialBaseMaterialModule} from '../shared/app-social-base-material/app-social-base-material.module';
-
-
-
-
+import {UsuarioListagemComponent} from './usuario-listagem/usuario-listagem.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
-    AppSocialBaseMaterialModule
+    AppSocialBaseMaterialModule,
+    RouterModule
   ],
-  providers: [
-    UsuarioService
-  ],
-  declarations: [CadastroUsuarioComponent]
+  declarations: [CadastroUsuarioComponent, UsuarioListagemComponent],
+  providers: [UsuarioService]
 })
-export class UsuarioModule { }
+export class UsuarioModule {
+}

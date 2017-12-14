@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {AppComponent} from './app.component';
-import {CadastroUsuarioComponent} from './usuario/cadastro-usuario/cadastro-usuario.component';
-
+import {CadastroUsuarioComponent} from './usuario/usuario-cadastro/cadastro-usuario.component';
+import {UsuarioListagemComponent} from './usuario/usuario-listagem/usuario-listagem.component';
 const routes: Routes = [
   {
     path: '',
@@ -12,14 +12,20 @@ const routes: Routes = [
         path: 'usuario/cadastro',
         component: CadastroUsuarioComponent
       },
+      {
+        path: 'usuario/listagem',
+        component: UsuarioListagemComponent
+      },
     ],
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
+  exports: [RouterModule],
+  declarations: []
 })
-
-export class AppRoutingModule {
+export class AppRoutingModuleModule {
 }

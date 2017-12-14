@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './usuario/cadastro-usuario/cadastro-usuario.component.html',
+  selector: 'app-social',
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  titulo = 'Livros';
+
+  livros = ['O universo numa...', '2001 uma odisséia', 'Guia do mochileiro'];
+
+  novoLivro = 'Digite aqui...';
+
+  inserirLivro() {
+    this.livros.push(this.novoLivro);
+    this.novoLivro = 'Digite aqui...';
+  }
 }

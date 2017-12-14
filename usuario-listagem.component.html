@@ -1,0 +1,51 @@
+<h2>
+  <div class="div-titulo">
+    <label value="Título">Usuários</label>
+  </div>
+</h2>
+
+<button mat-mini-fab [routerLink]="'/usuario/cadastro/'"
+   matTooltip="Cadastrar usuário"
+   matTooltipPosition="below" color="primary">
+  <!--Para outros ícones, procure em: https://material.io/icons/ -->
+  <i class="material-icons">add</i>
+</button>
+<br><br>
+
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+
+    <!-- Coluna Login -->
+    <ng-container matColumnDef="login">
+      <mat-header-cell *matHeaderCellDef>Login</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.login}} </mat-cell>
+    </ng-container>
+
+    <!-- Coluna Nome -->
+    <ng-container matColumnDef="nome">
+      <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+    </ng-container>
+
+    <!-- Coluna Email -->
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+    </ng-container>
+
+    <!-- Coluna Idade -->
+    <ng-container matColumnDef="idade">
+      <mat-header-cell *matHeaderCellDef>Idade</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.idade}} </mat-cell>
+    </ng-container>
+
+    <!-- Coluna Data de nascimento -->
+    <ng-container matColumnDef="data">
+      <mat-header-cell *matHeaderCellDef>Data de nascimento</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.data}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

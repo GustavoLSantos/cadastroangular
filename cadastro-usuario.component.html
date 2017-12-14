@@ -4,40 +4,64 @@
   </div>
 </h2>
 <div>
-  <mat-form-field>
-    <input matInput placeholder="Nome" type="text" name="nome" autocomplete="off"/>
-  </mat-form-field>
+  <mat-card>
+    <mat-card-content>
+      <mat-input-container>
+        <input matInput [(ngModel)]="usuario.nome" name="nome" autocomplete="off" placeholder="Nome"/>
+      </mat-input-container>
+    </mat-card-content>
+  </mat-card>
 </div>
 <div>
-  <mat-form-field>
-    <input matInput placeholder="Usuario" type="text" name="user" autocomplete="on"/>
-  </mat-form-field>
+  <mat-card>
+    <mat-card-content>
+      <mat-input-container>
+        <input matInput [(ngModel)]="usuario.login" name="login" autocomplete="on" placeholder="Login"/>
+      </mat-input-container>
+    </mat-card-content>
+  </mat-card>
 </div>
 <div>
-  <mat-form-field>
-    <input matInput placeholder="Email" type="email" name="email" autocomplete="on"/>
-  </mat-form-field>
+  <mat-card>
+    <mat-card-content>
+      <mat-input-container>
+        <input matInput [(ngModel)]="usuario.email" name="email" autocomplete="on" placeholder="Email"/>
+      </mat-input-container>
+    </mat-card-content>
+  </mat-card>
 </div>
 <div>
-  <mat-form-field>
-    <input matInput placeholder="Senha" type="password" name="senha" autocomplete="off"/>
-  </mat-form-field>
+  <mat-card>
+    <mat-card-content>
+      <mat-input-container>
+        <input matInput [(ngModel)]="usuario.senha" name="senha" type="password" autocomplete="off" placeholder="Senha"/>
+      </mat-input-container>
+    </mat-card-content>
+  </mat-card>
 </div>
 <div>
-  <mat-form-field>
-    <input matInput placeholder="Idade" type="number" name="idade" autocomplete="off"/>
-  </mat-form-field>
+  <mat-card>
+    <mat-card-content>
+      <mat-input-container>
+        <input matInput [(ngModel)]="usuario.idade" name="idade" type="number" autocomplete="off" placeholder="Idade"/>
+      </mat-input-container>
+    </mat-card-content>
+  </mat-card>
 </div>
 <div>
-  <mat-form-field>
-    <input matInput placeholder="Data de nascimento" type="date" name="data" autocomplete="off"/>
-  </mat-form-field>
+  <mat-card>
+    <mat-card-content>
+      <mat-input-container>
+        <input matInput [(ngModel)]="usuario.data" name="data" autocomplete="off" type="date" placeholder="Data de nascimento"/>
+      </mat-input-container>
+    </mat-card-content>
+  </mat-card>
 </div>
 
 <div>
 
-  <button mat-raised-button color="primary" ng-click="cadastrarUsuario()">
-    Cadastrar
+  <button mat-raised-button color="primary" (click)="cadastrarUsuario()">
+    Salvar
   </button>
 
 </div>

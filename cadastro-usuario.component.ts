@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {Usuario} from '../../shared/model/usuario';
 import {UsuarioService} from '../../shared/service/usuario.service';
 
@@ -11,15 +12,18 @@ export class CadastroUsuarioComponent implements OnInit {
 
   usuario: Usuario = new Usuario;
 
-  constructor(private usuarioService: UsuarioService) {
+  constructor(private usuarioService: UsuarioService, private roteador: Router) {
   }
 
   ngOnInit() {
   }
 
-  cadastrarUsuario(){
+  cadastrarUsuario() {
     this.usuarioService.cadastrarUsuario(this.usuario);
-    this.usuario = new Usuario()
+    this.usuario = new Usuario();
+
+    // Navega para a listagem de usuários
+    this.roteador.navigate(['/usuario/listagem']);
   }
 
 }
